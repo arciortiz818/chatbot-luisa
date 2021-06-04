@@ -1,0 +1,138 @@
+{
+    "greetings" : {
+        "name": "greetings",
+        "alias": "Saludo",
+        "responses": [
+            "Hola, soy Luisa, tu asistente virtual.",
+            "Cómo es tu nombre?"
+        ],
+        "options": [],
+        "nextIntent": "personal-data",
+        "conditions": [],
+        "links": [],
+        "intentIfFails": "",
+        "log": false
+    },
+    "fired" : {
+        "name": "fired",
+        "alias": "Despedida",
+        "responses": [
+            "Fue un placer, esperamos que vuelvas pronto."
+        ],
+        "options": [],
+        "nextIntent": "greetings",
+        "conditions": [],
+        "links": [],
+        "intentIfFails": "",
+        "log": false
+    },
+    "not-found" : {
+        "name": "not-found",
+        "alias": "No entiendo",
+        "responses": [
+            "No entendí tu respuesta..."
+        ],
+        "options": [],
+        "nextIntent": "",
+        "conditions": [],
+        "links": [],
+        "intentIfFails": "",
+        "log": false
+    },
+    "personal-data" : {
+        "name": "personal-data",
+        "alias": "Tratamiento Datos Personales",
+        "responses": [
+            "Bienvenido, ¡Aceptas el tratamiento de tus datos personales?"
+        ],
+        "options": [],
+        "nextIntent": "main-options",
+        "conditions": [
+            ["==","si"]
+        ],
+        "links": [],
+        "intentIfFails": "fired",
+        "log": false
+    },
+    "main-options" : {
+        "name": "main-options",
+        "alias": "Opciones Principales",
+        "responses": [
+            "Por favor selecciona la opción sobre la que deseas obtener información:"
+        ],
+        "options": [
+            {"name": "cit-med", "value": "Citas Médicas"},
+            {"name": "vac-cov", "value": "Vacunación Covid"},
+            {"name": "cir-pre", "value": "Programación Cirugía y Preanestesia"}
+        ],
+        "nextIntent": "",
+        "conditions": [],
+        "links": [
+            ["==","cit-med"],
+            ["==","vac-cov"],
+            ["==","cir-pre"]
+        ],
+        "intentIfFails": "not-found",
+        "log": false
+    },
+    "cit-med" : {
+        "name": "cit-med",
+        "alias": "Citas Médicas",
+        "responses": [
+            "Para solicitud de citas médicas, por favor llena los siguientes datos:"
+        ],
+        "options": [],
+        "nextIntent": "request-send",        
+        "conditions":[
+            ["==","cit-med-request-send"]
+        ],
+        "links": [],
+        "intentIfFails": "main-options",
+        "log": false
+    },
+    "vac-cov" : {
+        "name": "vac-cov",
+        "alias": "Vacunación Covid",
+        "responses": [
+            "Para programar vacuna contra el covid, por favor llene los siguientes datos:"
+        ],
+        "options": [],
+        "nextIntent": "request-send",
+        "conditions": [
+            ["==","vac-cov-request-send"]
+        ],
+        "links": [],
+        "intentIfFails": "main-options",
+        "log": false
+    },
+    "cir-pre" : {
+        "name": "cir-pre",
+        "alias": "Cirugia y Preanestesia",
+        "responses": [
+            "Para programación de Cirugía y Preanestesia, por favor llene los siguientes datos:"
+        ],
+        "options": [],
+        "nextIntent": "request-send", 
+        "conditions":[
+            ["==","cir-pre-request-send"]
+        ],
+        "links": [],
+        "intentIfFails": "main-options",
+        "log": false
+    },
+    "request-send" : {
+        "name": "request-send",
+        "alias": "Petición Enviada",
+        "responses": [
+            "Su petición ha sido enviada. Deseas que te ayude en algo más o quieres terminar la conversación?"
+        ],
+        "options": [],
+        "nextIntent": "main-options",
+        "conditions":[
+            ["==","si"]
+        ],
+        "links": [],
+        "intentIfFails": "greetings",
+        "log": false
+    }
+}
