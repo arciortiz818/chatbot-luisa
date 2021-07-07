@@ -466,7 +466,7 @@ export default {
         subject: "Solicitud de Cita Médica - Luisa",
         intent: "Form Citas Médicas",
       });
-      formCitasMedicas = {
+      this.formCitasMedicas = {
         nombre: "",
         docIdentidad: "",
         telefono: "",
@@ -507,7 +507,7 @@ export default {
         subject: "Vacunación Covid-19 - Luisa",
         intent: "Form Vacunación Covid",
       });
-      formVacunasCovid = {
+      this.formVacunasCovid = {
         nombre: "",
         docIdentidad: "",
         telefono: "",
@@ -553,7 +553,7 @@ export default {
           this.formCirugiaPreanestesia.historiaClinica,
         ],
       });
-      formCirugiaPreanestesia = {
+      this.formCirugiaPreanestesia = {
         nombre: "",
         docIdentidad: "",
         telefono: "",
