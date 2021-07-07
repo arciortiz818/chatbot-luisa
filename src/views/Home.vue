@@ -466,6 +466,14 @@ export default {
         subject: "Solicitud de Cita Médica - Luisa",
         intent: "Form Citas Médicas",
       });
+      formCitasMedicas = {
+        nombre: "",
+        docIdentidad: "",
+        telefono: "",
+        email: "",
+        servicioCita: null,
+        ipsRemite: "",
+      };
     },
     onSubmitVacCov(event) {
       event.preventDefault();
@@ -499,6 +507,12 @@ export default {
         subject: "Vacunación Covid-19 - Luisa",
         intent: "Form Vacunación Covid",
       });
+      formVacunasCovid = {
+        nombre: "",
+        docIdentidad: "",
+        telefono: "",
+        email: "",
+      };
     },
     onSubmitCirPre(event) {
       event.preventDefault();
@@ -539,6 +553,15 @@ export default {
           this.formCirugiaPreanestesia.historiaClinica,
         ],
       });
+      formCirugiaPreanestesia = {
+        nombre: "",
+        docIdentidad: "",
+        telefono: "",
+        email: "",
+        ordenMedica: null,
+        autorizacionEps: null,
+        historiaClinica: null,
+      };
     },
     onFileOneChange(event) {
       this.formCirugiaPreanestesia.ordenMedica = event.target.files[0];
